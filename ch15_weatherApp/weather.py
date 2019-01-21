@@ -7,7 +7,6 @@ Created on Wed Jan  9 12:13:12 2019
 
 import requests
 import config
-
 endpoint ="http://api.openweathermap.org/data/2.5/weather"
 
 #------------
@@ -16,7 +15,7 @@ endpoint ="http://api.openweathermap.org/data/2.5/weather"
 #unicode  special codes
 #
 
-payload = {"q" :"Copenhagen, Denmark", "units":"metric", "api":"config.api_key"}
+payload = {"q" :"Copenhagen, Denmark", "units":"metric", "appid":config.api_key}
 
 response = requests.get(endpoint, params=payload)
 data = response.json()
