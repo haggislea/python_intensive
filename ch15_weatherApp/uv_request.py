@@ -17,9 +17,12 @@ response = requests.get(endpoint, params=payload)
 data = response.json()
 
 uv_indicator = data[0]['value']
+date_and_time = data[0]['date_iso']
+
+#print(uv_indicator)
+#print(date_and_time)
 
 
-print(uv_indicator)
-
+print("\nAnd the UV index will be {} on {}.  \n\nThe purpose of this index is to help people protect themselves from UV radiation. " .format(uv_indicator, date_and_time.title()))
 
     
