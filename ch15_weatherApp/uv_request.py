@@ -6,14 +6,20 @@ Created on Mon Jan 21 10:59:29 2019
 """
 
 import requests
+import config
 
-endpoint ="http://api.openweathermap.org/data/2.5/uvi?appid={appid}&lat={lat}&lon={lon}"
+endpoint ="http://api.openweathermap.org/data/2.5/uvi/forecast?"
 
-payload ={"lon": 12.57, "lat": 55.69, "cnt": "8", "appid":"5a83590ea2392078ba2a53e072fed9e0"}
+payload ={"lon": 12.56, "lat": 55.67, "cnt": "8", "appid":config.api_key}
 
 
 response = requests.get(endpoint, params=payload)
 data = response.json()
 
-#print("\n {}'s weather is .")
-print(data)
+uv_indicator = data[0]['value']
+
+
+print(uv_indicator)
+
+
+    
